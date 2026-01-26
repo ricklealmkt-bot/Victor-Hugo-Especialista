@@ -11,8 +11,9 @@
     <style>
         /* --- RESET E VARIÁVEIS CSS --- */
         :root {
-            --primary-color: #0F2C59;
-            --secondary-color: #F2994A;
+            --primary-color: #0F2C59; /* Azul Marinho Profissional */
+            --secondary-color: #25D366; /* Verde WhatsApp Vibrante */
+            --secondary-hover: #128C7E; /* Verde Escuro para Hover */
             --text-dark: #333333;
             --text-light: #666666;
             --bg-light: #F8F9FA;
@@ -20,7 +21,11 @@
             --max-width: 1200px;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             font-family: 'Roboto', sans-serif;
@@ -29,9 +34,16 @@
             background-color: var(--bg-white);
         }
 
-        h1, h2, h3 { font-weight: 700; line-height: 1.2; }
+        h1, h2, h3 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
 
-        img { max-width: 100%; height: auto; display: block; }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
 
         .container {
             width: 90%;
@@ -39,24 +51,41 @@
             margin: 0 auto;
         }
 
+        /* --- BOTÃO ESTILO ALTA CONVERSÃO --- */
         .btn {
             display: inline-block;
-            padding: 15px 30px;
+            padding: 18px 35px;
             background-color: var(--secondary-color);
             color: white;
             text-decoration: none;
-            font-weight: 700;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-weight: 900;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            border-radius: 50px;
+            transition: all 0.3s ease;
             text-align: center;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            animation: pulse 2s infinite;
+            border: none;
+            cursor: pointer;
         }
 
         .btn:hover {
-            background-color: #e08838;
-            transform: translateY(-2px);
+            background-color: var(--secondary-hover);
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(18, 140, 126, 0.5);
+            color: white;
         }
 
-        .section-padding { padding: 80px 0; }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
 
         .section-title {
             text-align: center;
@@ -65,7 +94,7 @@
             margin-bottom: 50px;
         }
 
-        /* --- HERO SECTION --- */
+        /* --- 1ª DOBRA: HERO SECTION --- */
         #hero {
             background: linear-gradient(to right, #0F2C59, #1a3d75);
             color: white;
@@ -83,9 +112,22 @@
             gap: 40px;
         }
 
-        .hero-text { flex: 1; padding-bottom: 60px; }
-        .hero-text h1 { font-size: 3rem; margin-bottom: 20px; }
-        .hero-text h2 { font-size: 1.4rem; font-weight: 400; margin-bottom: 30px; opacity: 0.9; }
+        .hero-text {
+            flex: 1;
+            padding-bottom: 60px;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h2 {
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
 
         .hero-image {
             flex: 1;
@@ -93,77 +135,205 @@
             justify-content: flex-end;
             align-self: flex-end;
             position: relative;
+            bottom: -5px;
         }
         
         .hero-image img {
+            filter: drop-shadow(0px 0px 15px rgba(0,0,0,0.3));
             max-height: 75vh;
             object-fit: contain;
-            /* Filtro para suavizar a borda da foto */
-            filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.2));
         }
 
-        /* --- BENEFÍCIOS --- */
-        #beneficios { background-color: var(--bg-light); }
+        /* --- 2ª DOBRA: BENEFÍCIOS --- */
+        #beneficios {
+            background-color: var(--bg-light);
+        }
+
         .benefits-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
         }
+
         .benefit-card {
             background: white;
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             text-align: center;
+            transition: transform 0.3s ease;
         }
-        .benefit-icon { font-size: 3rem; margin-bottom: 20px; display: block; }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+        }
 
-        /* --- AUTORIDADE --- */
-        #autoridade .container { display: flex; align-items: center; gap: 50px; }
-        .autoridade-text { flex: 1; }
-        .autoridade-text h2 { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 30px; }
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* --- 3ª DOBRA: AUTORIDADE --- */
+        #autoridade .container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .autoridade-text {
+            flex: 1;
+        }
+        
+        .autoridade-text h2 {
+             font-size: 2.5rem;
+             color: var(--primary-color);
+             margin-bottom: 30px;
+        }
+
+        .autoridade-text p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .badge-container {
+            flex: 0.8;
+            display: flex;
+            justify-content: center;
+        }
+
         .badge-20anos {
             background-color: var(--primary-color);
             color: white;
-            width: 250px; height: 250px;
+            width: 250px;
+            height: 250px;
             border-radius: 50%;
-            display: flex; flex-direction: column;
-            justify-content: center; align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
+            box-shadow: 0 10px 20px rgba(15, 44, 89, 0.3);
         }
-        .badge-20anos .number { font-size: 5rem; font-weight: 900; }
+        
+        .badge-20anos span.number { font-size: 5rem; font-weight: 900; line-height: 1; }
+        .badge-20anos span.text { font-size: 1.2rem; font-weight: 500; }
 
-        /* --- DEPOIMENTOS --- */
-        #depoimentos { background-color: var(--bg-light); }
+        /* --- 4ª DOBRA: DEPOIMENTOS --- */
+        #depoimentos {
+            background-color: var(--bg-light);
+        }
+
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
+
         .testimonial-card {
             background: white;
-            padding: 30px;
+            padding: 40px;
             border-radius: 10px;
             border-left: 5px solid var(--secondary-color);
         }
-        .testimonial-author h4 { color: var(--primary-color); margin-top: 15px; }
 
-        /* --- CTA --- */
-        #cta-agendamento { background: var(--primary-color); color: white; text-align: center; }
-        #cta-agendamento h2 { margin-bottom: 20px; }
+        .testimonial-card p {
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
 
-        /* --- FAQ --- */
-        .faq-container { max-width: 800px; margin: 0 auto; }
-        details { background: var(--bg-light); margin-bottom: 10px; padding: 15px; border-radius: 5px; }
-        summary { font-weight: 700; cursor: pointer; color: var(--primary-color); }
+        .testimonial-author h4 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
 
-        footer { background: #0a1e3f; color: white; text-align: center; padding: 20px; opacity: 0.7; }
+        .testimonial-author span {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* --- 5ª DOBRA: CTA --- */
+        #cta-agendamento {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+        }
+        
+        #cta-agendamento h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        #cta-agendamento p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        /* --- 6ª DOBRA: FAQ --- */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        details {
+            background: var(--bg-light);
+            margin-bottom: 15px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        summary {
+            padding: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+            cursor: pointer;
+            position: relative;
+            list-style: none;
+        }
+        
+        summary::after {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+        }
+        
+        details[open] summary::after {
+            content: '-';
+        }
+
+        details p {
+            padding: 20px;
+            padding-top: 0;
+            color: var(--text-light);
+            border-top: 1px solid #eee;
+        }
+        
+        footer {
+            background: #0a1e3f;
+            color: rgba(255,255,255,0.6);
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9rem;
+        }
 
         /* --- RESPONSIVIDADE --- */
         @media (max-width: 900px) {
-            .hero-content { flex-direction: column; text-align: center; }
-            .hero-image { align-self: center; justify-content: center; }
+            .hero-text h1 { font-size: 2.5rem; }
+            #hero { text-align: center; height: auto; padding-bottom: 40px; }
+            .hero-content { flex-direction: column; gap: 20px; }
+            .hero-image { align-self: center; justify-content: center; width: 100%; }
+            .hero-image img { max-height: 450px; }
             #autoridade .container { flex-direction: column-reverse; text-align: center; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 { font-size: 2rem; }
+            .btn { width: 100%; padding: 18px 20px; font-size: 1rem; }
         }
     </style>
 </head>
@@ -175,7 +345,7 @@
                 <h1>Pare de gastar com brindes que não geram resultados.</h1>
                 <h2>Transforme esse custo em investimento estratégico com quem conhece o mercado de BH há 20 anos.</h2>
                 <a href="https://wa.me/5531997455656?text=Olá Victor, gostaria de uma consultoria estratégica de brindes." class="btn" target="_blank">
-                    Falar com Victor Hugo: (31) 99745-5656
+                    Quero meu diagnóstico gratuito
                 </a>
             </div>
             <div class="hero-image">
@@ -186,22 +356,22 @@
 
     <section id="beneficios" class="section-padding">
         <div class="container">
-            <h2 class="section-title">Inteligência estratégica em brindes.</h2>
+            <h2 class="section-title">Inteligência estratégica, não apenas brindes.</h2>
             <div class="benefits-grid">
                 <div class="benefit-card">
                     <span class="benefit-icon">💰</span>
                     <h3>Redução de Custos</h3>
-                    <p>Acabe com o desperdício de itens sem propósito. Invista no que gera percepção de valor.</p>
+                    <p>Identificamos desperdícios e focamos no que realmente gera percepção de valor para sua marca.</p>
                 </div>
                 <div class="benefit-card">
                     <span class="benefit-icon">📅</span>
                     <h3>Planejamento Anual</h3>
-                    <p>Datas sazonais e onboarding definidos com meses de antecedência.</p>
+                    <p>Calendário de ações, onboarding e datas sazonais organizados com antecedência total.</p>
                 </div>
                 <div class="benefit-card">
                     <span class="benefit-icon">🤝</span>
-                    <h3>Fidelização</h3>
-                    <p>Fortaleça os laços com seus clientes-chave e talentos da casa.</p>
+                    <h3>ROI e Fidelização</h3>
+                    <p>Brindes como ferramenta de retenção de talentos e fortalecimento de laços com clientes.</p>
                 </div>
             </div>
         </div>
@@ -210,13 +380,15 @@
     <section id="autoridade" class="section-padding">
         <div class="container">
             <div class="autoridade-text">
-                <h2>20 anos de mercado ao seu lado.</h2>
-                <p>Durante duas décadas, vi empresas gastarem fortunas em itens que não geravam conexão. Minha transição de fornecedor para <strong>Consultor Estratégico</strong> nasceu dessa dor.</p>
-                <p>Ao me contratar, sua empresa ganha um parceiro que entende a cultura de negócios mineira e sabe exatamente o que funciona para cada perfil de empresa.</p>
+                <h2>Experiência real ao seu lado.</h2>
+                <p>Durante duas décadas, vi empresas gastarem fortunas em itens sem propósito. Minha consultoria nasceu para mudar isso.</p>
+                <p>Eu não vendo apenas o produto. Eu entrego a estratégia. Você ganha um parceiro que conhece os melhores fornecedores e a cultura de negócios de Minas Gerais.</p>
             </div>
-            <div class="badge-20anos">
-                <span class="number">20+</span>
-                <span>Anos de Mercado</span>
+            <div class="badge-container">
+                <div class="badge-20anos">
+                    <span class="number">20+</span>
+                    <span class="text">Anos de Mercado<br>em BH</span>
+                </div>
             </div>
         </div>
     </section>
@@ -226,21 +398,21 @@
             <h2 class="section-title">O que dizem nossos clientes</h2>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
-                    <p>"Antes era uma correria todo fim de ano. Com o Victor, temos o calendário anual fechado e economizamos cerca de 25%."</p>
+                    <p>"Com a consultoria do Victor, economizamos cerca de 25% e nossos kits de onboarding agora são elogiados por todos."</p>
                     <div class="testimonial-author">
                         <h4>Mariana Costa</h4>
                         <span>Diretora de RH</span>
                     </div>
                 </div>
                 <div class="testimonial-card">
-                    <p>"A agilidade na logística e a qualidade das sugestões estratégicas para nossos clientes VIP fizeram toda a diferença."</p>
+                    <p>"A agilidade na logística e a qualidade das sugestões estratégicas fizeram toda a diferença na nossa retenção de clientes."</p>
                     <div class="testimonial-author">
                         <h4>Roberto Alencar</h4>
                         <span>CEO | Consultoria Financeira</span>
                     </div>
                 </div>
                 <div class="testimonial-card">
-                    <p>"O Victor sempre se preocupou mais com o resultado do que em apenas tirar o pedido. Confiança total."</p>
+                    <p>"Ele sempre se preocupou mais com o nosso resultado do que em apenas vender. É confiança total há mais de 10 anos."</p>
                     <div class="testimonial-author">
                         <h4>Ricardo Leal</h4>
                         <span>Gerente de Marketing</span>
@@ -253,17 +425,32 @@
     <section id="cta-agendamento" class="section-padding">
         <div class="container">
             <h2>Pronto para profissionalizar sua gestão?</h2>
-            <p>Agende um diagnóstico inicial sem compromisso.</p>
-            <br>
-            <a href="https://wa.me/5531997455656?text=Olá Victor, gostaria de um diagnóstico." class="btn" target="_blank">
-                Agendar Consultoria
+            <p>Agende um diagnóstico inicial sem compromisso e pare de desperdiçar orçamento.</p>
+            <a href="https://wa.me/5531997455656?text=Olá Victor, gostaria de agendar um diagnóstico inicial." class="btn" target="_blank">
+                Falar com o Especialista Agora
             </a>
+        </div>
+    </section>
+
+    <section id="faq" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Perguntas Frequentes</h2>
+            <div class="faq-container">
+                <details>
+                    <summary>Contratar uma consultoria não sai mais caro?</summary>
+                    <p>Pelo contrário. Meu trabalho identifica desperdícios e compras mal planejadas. A economia gerada costuma pagar o investimento da consultoria rapidamente.</p>
+                </details>
+                <details>
+                    <summary>Já tenho fornecedores, por que preciso de você?</summary>
+                    <p>Eu atuo como o estrategista que garante que você peça a coisa certa, no tempo certo. Posso inclusive gerenciar seus fornecedores atuais para garantir eficiência.</p>
+                </details>
+            </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>© 2026 Victor Hugo Consultoria. Belo Horizonte/MG.</p>
+            <p>© 2026 Victor Hugo Consultoria Estratégica. Belo Horizonte/MG.</p>
         </div>
     </footer>
 
