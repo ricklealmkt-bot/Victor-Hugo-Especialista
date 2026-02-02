@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Victor Hugo | Consultoria Estratégica de Brindes com ROI</title>
-    <meta name="description" content="Reduza gastos com brindes inúteis. Implemente um planejamento estratégico anual com Victor Hugo, especialista com 20 anos de mercado em BH.">
-
+    <title>Consultoria Brinde Estratégico com ROI | Victor Hugo</title>
+    <meta name="description" content="Pare de jogar dinheiro fora com brindes ineficazes. Consultoria estratégica com foco em ROI, diagnóstico e resultados mensuráveis em Belo Horizonte.">
+    
+    <link rel="canonical" href="https://victor-hugo-especialista.vercel.app/" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
     <style>
@@ -13,6 +14,7 @@
             --primary: #0F2C59; 
             --secondary: #25D366; 
             --accent: #F2994A;
+            --danger: #e74c3c;
             --bg-light: #F8F9FA;
             --text-dark: #1A1A1A;
             --text-light: #555555;
@@ -23,16 +25,17 @@
         body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: var(--text-dark); background: #fff; scroll-behavior: smooth; }
 
         .container { width: 90%; max-width: var(--max-width); margin: 0 auto; }
-        .section-padding { padding: 80px 0; }
+        .section-padding { padding: 90px 0; }
         .text-center { text-align: center; }
         
-        h1, h2, h3 { line-height: 1.2; }
-        
-        /* --- 1ª DOBRA: HERO (O GANCHO) --- */
+        h1, h2, h3 { line-height: 1.2; font-weight: 900; }
+        p { font-size: 1.1rem; color: var(--text-light); }
+
+        /* --- 1ª DOBRA: HERO --- */
         #hero {
             background: linear-gradient(135deg, #0F2C59 0%, #07162d 100%);
             color: white;
-            padding: 60px 0;
+            padding: 80px 0;
             min-height: 90vh;
             display: flex;
             align-items: center;
@@ -41,92 +44,93 @@
         .hero-grid {
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
-            gap: 40px;
+            gap: 50px;
             align-items: center;
         }
 
-        .hero-text h1 { font-size: 3.2rem; margin-bottom: 20px; font-weight: 900; }
+        .hero-text h1 { font-size: 3.5rem; margin-bottom: 20px; }
         .hero-text h1 span { color: var(--secondary); }
-        .hero-text h2 { font-size: 1.4rem; font-weight: 300; margin-bottom: 35px; opacity: 0.9; line-height: 1.4; }
+        .hero-text .subheadline { font-size: 1.4rem; font-weight: 300; margin-bottom: 40px; opacity: 0.95; border-left: 4px solid var(--secondary); padding-left: 20px; }
 
-        /* Moldura da Foto (Fim da foto flutuante) */
         .hero-image-container {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.2);
             border-radius: 30px;
             padding: 15px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.4);
         }
 
         .hero-image-container img {
             border-radius: 20px;
             width: 100%;
             display: block;
-            filter: brightness(1.05);
         }
 
-        /* --- BOTÕES --- */
+        /* --- BOTÕES PULSANTES --- */
         .btn {
             display: inline-block;
-            padding: 20px 35px;
+            padding: 22px 40px;
             background: var(--secondary);
             color: white;
             text-decoration: none;
             font-weight: 900;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             text-transform: uppercase;
             border-radius: 50px;
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
             animation: pulse 2s infinite;
             transition: 0.3s;
             border: none;
-            cursor: pointer;
         }
 
         .btn:hover { transform: scale(1.05); background: #1eb957; color: white; }
 
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
-        /* --- 2ª DOBRA: BENEFÍCIOS --- */
-        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; margin-top: 50px; }
-        .benefit-card { background: white; padding: 35px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; border-bottom: 5px solid var(--secondary); transition: 0.3s; }
-        .benefit-card:hover { transform: translateY(-10px); }
-        .benefit-card i { font-size: 2.5rem; display: block; margin-bottom: 15px; }
+        /* --- 2ª DOBRA: DOR + CONTRASTE --- */
+        #contraste { background: #fff; }
+        .contrast-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 50px; }
+        .contrast-card { padding: 40px; border-radius: 20px; }
+        .card-red { background: #fff5f5; border: 1px solid #feb2b2; }
+        .card-green { background: #f0fff4; border: 1px solid #9ae6b4; }
+        
+        .contrast-list { list-style: none; margin-top: 20px; }
+        .contrast-list li { margin-bottom: 15px; font-weight: 500; display: flex; align-items: center; }
+        .contrast-list li span { margin-right: 10px; font-size: 1.3rem; }
 
-        /* --- 3ª DOBRA: AUTORIDADE --- */
-        #autoridade { background: var(--bg-light); }
-        .auth-content { display: flex; align-items: center; gap: 60px; }
-        .auth-text { flex: 1; }
-        .auth-text h2 { font-size: 2.5rem; color: var(--primary); margin-bottom: 25px; }
-        .auth-text p { margin-bottom: 20px; font-size: 1.1rem; color: var(--text-light); }
+        /* --- 3ª DOBRA: BENEFÍCIOS --- */
+        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+        .benefit-item { display: flex; gap: 15px; align-items: flex-start; background: var(--bg-light); padding: 25px; border-radius: 15px; }
+        .benefit-item span { color: var(--secondary); font-size: 1.5rem; font-weight: bold; }
 
-        /* --- 4ª DOBRA: DEPOIMENTOS --- */
-        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
-        .testimonial-card { background: var(--bg-light); padding: 40px; border-radius: 15px; position: relative; }
-        .testimonial-card p { font-style: italic; margin-bottom: 20px; color: var(--text-light); }
-        .testimonial-card h4 { color: var(--primary); font-weight: 700; }
-        .testimonial-card span { font-size: 0.9rem; color: var(--accent); font-weight: bold; }
+        /* --- 4ª DOBRA: MÉTODO --- */
+        .method-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 50px; }
+        .step { text-align: center; position: relative; }
+        .step .number { width: 50px; height: 50px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-weight: 900; font-size: 1.5rem; }
 
-        /* --- 6ª DOBRA: FAQ --- */
+        /* --- 5ª DOBRA: OBJEÇÃO (VALOR VS PREÇO) --- */
+        #valor { background: var(--primary); color: white; }
+        #valor h2 { color: white; }
+        .value-box { max-width: 800px; margin: 0 auto; background: rgba(255,255,255,0.05); padding: 40px; border-radius: 20px; border: 1px dashed var(--secondary); }
+
+        /* --- FAQ --- */
         .faq-container { max-width: 800px; margin: 50px auto 0; }
-        details { background: white; margin-bottom: 15px; border: 1px solid #eee; border-radius: 10px; overflow: hidden; }
+        details { background: var(--bg-light); margin-bottom: 10px; border-radius: 10px; }
         summary { padding: 20px; font-weight: 700; cursor: pointer; color: var(--primary); list-style: none; position: relative; }
-        summary::after { content: '+'; position: absolute; right: 20px; color: var(--secondary); }
-        details[open] summary::after { content: '-'; }
-        details p { padding: 0 20px 20px; color: var(--text-light); }
+        summary::after { content: '+'; position: absolute; right: 20px; }
+        details p { padding: 0 20px 20px; }
 
-        footer { background: #07162d; color: white; padding: 50px 0; text-align: center; }
+        footer { background: #07162d; color: white; padding: 60px 0; text-align: center; }
 
-        /* --- RESPONSIVIDADE --- */
         @media (max-width: 992px) {
-            .hero-grid, .auth-content { grid-template-columns: 1fr; flex-direction: column; text-align: center; }
+            .hero-grid, .contrast-grid { grid-template-columns: 1fr; }
             .hero-text h1 { font-size: 2.5rem; }
-            .hero-image-container { max-width: 450px; margin: 0 auto; }
+            .hero-image-container { max-width: 400px; margin: 0 auto; }
         }
     </style>
 </head>
@@ -135,109 +139,112 @@
     <section id="hero">
         <div class="container hero-grid">
             <div class="hero-text">
-                <h1>Pare de <span>Gastar Dinheiro</span> com Brindes que Vão para o Lixo.</h1>
-                <h2>Transforme seu investimento em ativos estratégicos com Victor Hugo. Mais de 20 anos de experiência em BH criando soluções que geram ROI real.</h2>
-                <a href="https://wa.me/5531997455656?text=Olá Victor, quero um diagnóstico da minha estratégia de brindes." class="btn">
-                    Falar com Victor Hugo: (31) 99745-5656
-                </a>
+                <h1>Transforme Seus Brindes em Ferramentas de <span>Crescimento com ROI Real</span></h1>
+                <p class="subheadline">A consultoria premium que conecta seus objetivos de negócio ao público certo com estratégia e resultados mensuráveis.</p>
+                <a href="https://wa.me/5531997455656?text=Quero um Diagnóstico Estratégico de Brindes" class="btn">Solicitar Diagnóstico Estratégico</a>
             </div>
             <div class="hero-image-container">
-                <img src="ceo-victor.png.png" alt="Victor Hugo - Consultor Estratégico em BH">
+                <img src="ceo-victor.png.png" alt="Victor Hugo - Consultoria de Brindes Estratégicos com ROI" title="Victor Hugo Especialista em ROI de Brindes">
             </div>
         </div>
     </section>
 
-    <section class="section-padding">
+    <section id="contraste" class="section-padding">
         <div class="container">
-            <h2 class="section-title text-center" style="font-size: 2.5rem; color: var(--primary);">Não é sobre comprar brindes,<br>é sobre inteligência estratégica.</h2>
+            <h2 class="text-center" style="font-size: 2.5rem; color: var(--primary);">O Abismo entre Gastar e Investir</h2>
+            <div class="contrast-grid">
+                <div class="contrast-card card-red">
+                    <h3 style="color: #c0392b;">❌ O Cenário Comum</h3>
+                    <ul class="contrast-list">
+                        <li><span>❌</span> Desperdício massivo de verba</li>
+                        <li><span>❌</span> Decisões baseadas apenas em preço</li>
+                        <li><span>❌</span> Itens genéricos que não geram impacto</li>
+                        <li><span>❌</span> Zero mensuração de resultados</li>
+                    </ul>
+                </div>
+                <div class="contrast-card card-green">
+                    <h3 style="color: #27ae60;">📈 Método Brinde com ROI</h3>
+                    <ul class="contrast-list">
+                        <li><span>✔</span> Diagnóstico estratégico inicial</li>
+                        <li><span>✔</span> Objetivos claros e KPIs definidos</li>
+                        <li><span>✔</span> Curadoria alinhada ao contexto</li>
+                        <li><span>✔</span> ROI definido com indicadores reais</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background: var(--bg-light);">
+        <div class="container">
+            <h2 class="text-center section-title">Resultados que sua empresa alcança:</h2>
             <div class="benefits-grid">
-                <div class="benefit-card">
-                    <i>💰</i>
-                    <strong>Redução de Custos</strong>
-                    <p>Fim das compras por impulso e do desperdício de orçamento.</p>
-                </div>
-                <div class="benefit-card">
-                    <i>📅</i>
-                    <strong>Planejamento Anual</strong>
-                    <p>Onboarding, Natal e datas sazonais organizados com antecedência.</p>
-                </div>
-                <div class="benefit-card">
-                    <i>📈</i>
-                    <strong>ROI Comprovado</strong>
-                    <p>Brindes que funcionam como ferramentas de vendas e retenção.</p>
-                </div>
-                <div class="benefit-card">
-                    <i>🚚</i>
-                    <strong>Logística em BH</strong>
-                    <p>Expertise local para garantir entrega e qualidade em Minas Gerais.</p>
-                </div>
+                <div class="benefit-item"><span>✔</span> <p>Aumente drasticamente a lembrança da sua marca.</p></div>
+                <div class="benefit-item"><span>✔</span> <p>Gere resultados mensuráveis com dados reais de impacto.</p></div>
+                <div class="benefit-item"><span>✔</span> <p>Reduza desperdícios com decisões orientadas por dados.</p></div>
+                <div class="benefit-item"><span>✔</span> <p>Alinhe cada brinde aos objetivos estratégicos do board.</p></div>
+                <div class="benefit-item"><span>✔</span> <p>Crie campanhas previsíveis e justificáveis financeiramente.</p></div>
+                <div class="benefit-item"><span>✔</span> <p>Justifique cada centavo investido com relatórios de ROI.</p></div>
             </div>
         </div>
     </section>
 
-    <section id="autoridade" class="section-padding">
-        <div class="container auth-content">
-            <div class="auth-text">
-                <h2>O Know-how de quem vive o mercado mineiro há 20 anos.</h2>
-                <p>Durante duas décadas, vi empresas de todos os tamanhos jogarem fortunas fora com itens sem propósito. Eu decidi mudar esse jogo.</p>
-                <p>Minha transição de fornecedor para <strong>Consultor Estratégico</strong> foi motivada por um único objetivo: garantir que cada centavo do seu orçamento de marketing seja um atalho para o sucesso, não um custo descartável.</p>
-                <p>Contratar minha consultoria é ter um parceiro que conhece os bastidores, os melhores fornecedores e o que realmente funciona para o público de BH.</p>
+    <section class="section-padding">
+        <div class="container text-center">
+            <h2 style="font-size: 2.5rem; color: var(--primary);">Como funciona a Consultoria</h2>
+            <div class="method-steps">
+                <div class="step">
+                    <div class="number">1</div>
+                    <h3>Diagnóstico</h3>
+                    <p>Análise completa do cenário atual.</p>
+                </div>
+                <div class="step">
+                    <div class="number">2</div>
+                    <h3>Definição de KPIs</h3>
+                    <p>O que vamos medir? Conversão ou Retenção?</p>
+                </div>
+                <div class="step">
+                    <div class="number">3</div>
+                    <h3>Curadoria</h3>
+                    <p>Planejamento estratégico de itens e contexto.</p>
+                </div>
+                <div class="step">
+                    <div class="number">4</div>
+                    <h3>ROI</h3>
+                    <p>Mensuração e entrega de resultados reais.</p>
+                </div>
+            </div>
+            <div style="margin-top: 60px;">
+                <a href="https://wa.me/5531997455656?text=Quero agendar minha consultoria estratégica" class="btn">Agendar minha Consultoria Estratégica</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="valor" class="section-padding">
+        <div class="container text-center">
+            <div class="value-box">
+                <h2>Investimento Inteligente</h2>
+                <p style="color: #fff; margin: 20px 0; font-size: 1.3rem;">"Não vendemos brindes — entregamos estratégia com retorno mensurável."</p>
+                <p style="opacity: 0.8;">O custo da consultoria se paga através da eliminação de desperdícios e da otimização do seu CAC (Custo de Aquisição de Cliente).</p>
             </div>
         </div>
     </section>
 
     <section class="section-padding">
         <div class="container">
-            <h2 class="text-center" style="font-size: 2.5rem; color: var(--primary);">O que líderes de grandes empresas em MG dizem</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <p>"O Victor não nos vendeu canetas, ele nos vendeu um processo de onboarding que reduziu nosso turnover. A economia foi nítida."</p>
-                    <h4>Ricardo Oliveira</h4>
-                    <span>Diretor de RH</span>
-                </div>
-                <div class="testimonial-card">
-                    <p>"Trabalhamos com o Victor há 12 anos. Sua visão estratégica sobre o planejamento de final de ano mudou nossa relação com os clientes."</p>
-                    <h4>Carla Mendes</h4>
-                    <span>Gerente de Marketing</span>
-                </div>
-                <div class="testimonial-card">
-                    <p>"A tranquilidade de saber que o planejamento está na mão de quem entende de ROI não tem preço. Profissionalismo impecável."</p>
-                    <h4>Marcos Vinícius</h4>
-                    <span>CEO | Empresa de Logística</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding text-center" style="background: var(--primary); color: white;">
-        <div class="container">
-            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Pronto para profissionalizar sua gestão?</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 40px; opacity: 0.8;">Agende uma conversa estratégica sem compromisso e receba um diagnóstico inicial.</p>
-            <a href="https://wa.me/5531997455656?text=Victor, quero agendar minha consultoria estratégica." class="btn">
-                Agendar minha consultoria estratégica
-            </a>
-        </div>
-    </section>
-
-    <section class="section-padding">
-        <div class="container">
-            <h2 class="text-center" style="font-size: 2.5rem; color: var(--primary);">Perguntas Frequentes</h2>
+            <h2 class="text-center" style="color: var(--primary);">FAQ - Objeções Estratégicas</h2>
             <div class="faq-container">
                 <details>
-                    <summary>Consultoria é caro?</summary>
-                    <p>Caro é gastar R$ 10.000,00 em brindes que ninguém usa. Minha consultoria é um investimento que se paga através da otimização de custos e aumento da efetividade das suas ações.</p>
+                    <summary>Não sei se vale o preço investido.</summary>
+                    <p>O que entregamos é inteligência aplicada. Cada real investido é justificado por métricas, não por catálogo de produto. O foco é o lucro final.</p>
                 </details>
                 <details>
-                    <summary>Minha empresa é pequena, serve para mim?</summary>
-                    <p>Sim! O planejamento estratégico é justamente o que permite que empresas menores compitam com gigantes, usando o orçamento de forma inteligente e cirúrgica.</p>
+                    <summary>Já usamos brindes há anos com fornecedores próprios.</summary>
+                    <p>O problema de anos não se resolve por volume, mas por método. Vamos auditar o que você já faz e elevar o nível da sua estratégia para parar de perder dinheiro.</p>
                 </details>
                 <details>
-                    <summary>Já tenho um fornecedor de brindes, por que preciso de você?</summary>
-                    <p>Eu não sou um fornecedor, sou seu braço direito estratégico. Eu ajudo você a decidir O QUE comprar, QUANDO comprar e COMO medir o resultado, podendo inclusive gerenciar seus fornecedores atuais.</p>
-                </details>
-                <details>
-                    <summary>Como funciona o processo?</summary>
-                    <p>Começamos com um diagnóstico da sua situação atual, passamos para a criação de um plano de ação anual e eu acompanho a implementação para garantir o ROI.</p>
+                    <summary>Não sabemos o que medir no final da campanha.</summary>
+                    <p>Fique tranquilo. Definimos juntos os indicadores que importam para o seu negócio: seja conversão, retenção ou percepção de marca no Top of Mind.</p>
                 </details>
             </div>
         </div>
@@ -245,8 +252,9 @@
 
     <footer>
         <div class="container">
-            <p>© 2026 Victor Hugo - Consultoria Estratégica em BH.</p>
-            <p style="opacity: 0.5; font-size: 0.8rem; margin-top: 10px;">Transformando custos em ativos de marketing há mais de 20 anos.</p>
+            <h2 style="color: white; margin-bottom: 20px;">Victor Hugo | Brinde Estratégico</h2>
+            <p style="color: rgba(255,255,255,0.6);">20 anos de experiência transformando o mercado promocional de BH em ciência de marketing.</p>
+            <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.5;">© 2026 Todos os direitos reservados. Foco em Consultoria de Brindes com ROI.</p>
         </div>
     </footer>
 
