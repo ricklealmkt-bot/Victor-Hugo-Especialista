@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consultoria Brinde Estratégico com ROI | Victor Hugo</title>
-    <meta name="description" content="Transforme brindes em ativos de vendas. Consultoria especializada em BH para gerar ROI, leads e fidelização através de brindes estratégicos corporativos.">
+    <meta name="description" content="Transforme brindes em ativos de vendas. Consultoria especializada em BH com foco em ROI, redução de desperdício e planejamento estratégico anual.">
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
@@ -22,12 +22,12 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: var(--text-dark); background: #fff; }
 
-        /* --- HERO COM FOTO OTIMIZADA --- */
+        /* --- HERO COM FOTO OTIMIZADA (SOLUÇÃO PARA FOTO FLUTUANDO) --- */
         #hero {
             background: linear-gradient(135deg, #0F2C59 0%, #07162d 100%);
             color: white;
             padding: 80px 0;
-            min-height: 90vh;
+            min-height: 80vh;
             display: flex;
             align-items: center;
         }
@@ -43,7 +43,7 @@
         .hero-text h1 span { color: var(--secondary-color); }
         .hero-text p { font-size: 1.3rem; margin-bottom: 35px; opacity: 0.9; }
 
-        /* Moldura da Foto Estilo Referência */
+        /* Moldura de Vidro - Acora a imagem no design */
         .hero-image-container {
             position: relative;
             background: var(--bg-glass);
@@ -58,9 +58,11 @@
             border-radius: 20px;
             width: 100%;
             display: block;
+            /* Filtro sutil para integrar a foto profissional */
+            filter: contrast(1.05) brightness(1.05);
         }
 
-        /* --- BOTÃO PULSANTE --- */
+        /* --- BOTÃO DE ALTA CONVERSÃO --- */
         .btn-cta {
             display: inline-block;
             padding: 22px 40px;
@@ -74,44 +76,41 @@
             box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
             animation: pulse 2s infinite;
             transition: 0.3s;
+            border: none;
         }
 
-        .btn-cta:hover { transform: scale(1.05); background: #1eb957; }
+        .btn-cta:hover { transform: scale(1.05); background: #1eb957; color: white; }
 
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1.03); box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
-        /* --- SEÇÕES DE CONTEÚDO --- */
-        .section-padding { padding: 100px 0; }
+        .section-padding { padding: 80px 0; }
         .container { width: 90%; max-width: var(--max-width); margin: 0 auto; }
         .text-center { text-align: center; }
         h2.section-title { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 50px; }
 
-        /* --- DORES E ROI --- */
-        .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .pain-card { background: #fdf2f2; padding: 40px; border-radius: 15px; border-left: 5px solid #e74c3c; }
-        .pain-card h3 { color: #c0392b; margin-bottom: 15px; }
+        /* --- DASHBOARD DE RESULTADOS (BENEFÍCIOS) --- */
+        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .benefit-box { 
+            background: #fff; 
+            padding: 40px; 
+            border-radius: 20px; 
+            text-align: center; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-bottom: 6px solid var(--secondary-color);
+        }
+        .benefit-box .stat { font-size: 3rem; font-weight: 900; color: var(--primary-color); display: block; margin-bottom: 10px; }
+        .benefit-box strong { font-size: 1.2rem; display: block; margin-bottom: 10px; }
 
-        /* --- BENEFÍCIOS --- */
-        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .benefit-box { background: var(--bg-light); padding: 30px; border-radius: 15px; text-align: center; border: 1px solid #eee; }
-        .benefit-box .stat { font-size: 2.5rem; font-weight: 900; color: var(--primary-color); display: block; }
+        footer { background: #07162d; color: white; padding: 40px 0; text-align: center; }
 
-        /* --- FAQ --- */
-        .faq-item { margin-bottom: 15px; background: #f9f9f9; border-radius: 10px; }
-        summary { padding: 20px; font-weight: 700; cursor: pointer; color: var(--primary-color); outline: none; }
-        .faq-item p { padding: 0 20px 20px; color: var(--text-light); }
-
-        footer { background: #07162d; color: white; padding: 40px 0; text-align: center; font-size: 0.9rem; }
-
-        /* --- RESPONSIVIDADE --- */
         @media (max-width: 992px) {
             .hero-grid { grid-template-columns: 1fr; text-align: center; }
             .hero-text h1 { font-size: 2.5rem; }
-            .hero-image-container { max-width: 500px; margin: 0 auto; }
+            .hero-image-container { max-width: 450px; margin: 0 auto; }
         }
     </style>
 </head>
@@ -120,112 +119,45 @@
     <section id="hero">
         <div class="container hero-grid">
             <div class="hero-text">
-                <h1>Transforme Cada Brinde em <span>Receita Mensurável</span></h1>
-                <p>De brindes esquecidos a ativos estratégicos: Consultoria focada em ROI para empresas que buscam gerar mais vendas, leads e fidelização real.</p>
-                <a href="https://wa.me/5531997455656?text=Quero a consultoria com ROI" class="btn-cta">
-                    Quero Consultoria com ROI
+                <h1>Transforme Brindes Corporativos em <span>ROI Mensurável</span></h1>
+                <p>Pare de ver brindes como custo. Implemente uma estratégia de ativos promocionais que gera leads, fideliza clientes e reduz desperdício de orçamento.</p>
+                <a href="https://wa.me/5531997455656?text=Quero agendar meu diagnóstico de ROI" class="btn-cta">
+                    Agendar Diagnóstico de ROI
                 </a>
             </div>
             <div class="hero-image-container">
-                <img src="ceo-victor.png.png" alt="Victor Hugo - Especialista em Consultoria de Brindes com ROI">
+                <img src="ceo-victor.png.png" alt="Victor Hugo - Consultoria Brinde Estratégico">
             </div>
         </div>
     </section>
 
     <section class="section-padding">
         <div class="container">
-            <h2 class="section-title text-center">Por que suas ações de brindes estão falhando?</h2>
-            <div class="pain-grid">
-                <div class="pain-card">
-                    <h3>Custo sem Retorno</h3>
-                    <p>Você investe milhares de reais e não consegue provar para a diretoria qual foi o lucro gerado.</p>
-                </div>
-                <div class="pain-card">
-                    <h3>Falta de Estratégia</h3>
-                    <p>Brindes comprados "na correria" que terminam no lixo ou na gaveta do cliente, sem criar conexão.</p>
-                </div>
-                <div class="pain-card">
-                    <h3>Marketing Reativo</h3>
-                    <p>Sua equipe gasta tempo com logística e fornecedores em vez de focar no planejamento de vendas.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding" style="background: #f8f9fa;">
-        <div class="container">
-            <h2 class="section-title text-center">A Metodologia "Brinde Estratégico com ROI"</h2>
+            <h2 class="section-title text-center">O que sua empresa ganha com a Consultoria:</h2>
             <div class="benefits-grid">
                 <div class="benefit-box">
-                    <span class="stat">+30%</span>
-                    <strong>Aumento em Conversão</strong>
-                    <p>Ativações estratégicas que transformam eventos em máquinas de leads.</p>
+                    <span class="stat">25%</span>
+                    <strong>Economia Direta</strong>
+                    <p>Redução média de gastos com compras reativas de última hora e itens sem propósito.</p>
                 </div>
                 <div class="benefit-box">
-                    <span class="stat">-25%</span>
-                    <strong>Redução de Desperdício</strong>
-                    <p>Corte de gastos desnecessários com itens que não performam.</p>
+                    <span class="stat">80%</span>
+                    <strong>Lembrança de Marca</strong>
+                    <p>Foco em utilidade e percepção de valor: seu brinde fora da gaveta e na mão do cliente.</p>
                 </div>
                 <div class="benefit-box">
-                    <span class="stat">2.5x</span>
-                    <strong>LTV (Fidelização)</strong>
-                    <p>Brindes como ferramenta de retenção para aumentar o tempo do cliente na casa.</p>
+                    <span class="stat">15d</span>
+                    <strong>Agilidade Logística</strong>
+                    <p>Lead time reduzido através de planejamento antecipado e rede de fornecedores homologados em BH.</p>
                 </div>
-            </div>
-            <div class="text-center" style="margin-top: 50px;">
-                <a href="https://wa.me/5531997455656?text=Quero saber mais sobre a metodologia de ROI" class="btn-cta">Agendar Diagnóstico Gratuito</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding">
-        <div class="container">
-            <h2 class="section-title text-center">O que está incluído na consultoria?</h2>
-            <div class="pain-grid">
-                <div>
-                    <h3 style="color: var(--primary-color)">1. Auditoria e Diagnóstico</h3>
-                    <p>Análise profunda de gastos anteriores e identificação de gargalos financeiros.</p>
-                </div>
-                <div>
-                    <h3 style="color: var(--primary-color)">2. Planejamento de Ativos</h3>
-                    <p>Criação do calendário anual focado em gatilhos de vendas e datas sazonais.</p>
-                </div>
-                <div>
-                    <h3 style="color: var(--primary-color)">3. Gestão de KPI e ROI</h3>
-                    <p>Implementação de métodos de rastreio para medir o sucesso de cada item distribuído.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding" style="background: #f8f9fa;">
-        <div class="container">
-            <h2 class="section-title text-center">Dúvidas Frequentes (FAQ)</h2>
-            <div class="faq-item">
-                <details>
-                    <summary>E se eu não vir resultado?</summary>
-                    <p>Nossa consultoria é baseada em dados. Se não identificarmos uma projeção de ROI clara no diagnóstico, nós nem iniciamos o projeto. O foco é lucro, não gasto.</p>
-                </details>
-            </div>
-            <div class="faq-item">
-                <details>
-                    <summary>Isso não é apenas para grandes empresas?</summary>
-                    <p>Pequenos e médios negócios são os que mais perdem dinheiro com brindes errados. O planejamento de ROI é essencial para quem tem orçamento limitado.</p>
-                </details>
-            </div>
-            <div class="faq-item">
-                <details>
-                    <summary>Quanto tempo leva para implementar?</summary>
-                    <p>O diagnóstico é imediato. O plano de ação estratégico é entregue em até 10 dias úteis após a contratação.</p>
-                </details>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>© 2026 Victor Hugo - Brinde Estratégico com ROI. Especialista com 20 anos de mercado em Belo Horizonte.</p>
-            <p style="margin-top: 10px; opacity: 0.5;">Focado em resultados reais, mensuração de dados e ativos de marketing.</p>
+            <p>© 2026 Victor Hugo - Consultoria Brinde Estratégico com ROI.</p>
+            <p style="opacity: 0.6; font-size: 0.8rem; margin-top: 10px;">Especialista com 20 anos de atuação no mercado promocional de Belo Horizonte.</p>
         </div>
     </footer>
 
