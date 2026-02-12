@@ -14,79 +14,72 @@
     <title>Cia. do Brinde - Brinde Estratégico</title>
     
     <style>
-        body { 
-            background-color: #000; 
-            color: #fff; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            overflow-x: hidden;
-        }
-        .container { 
+        body { background-color: #000; color: #fff; font-family: sans-serif; margin: 0; }
+        
+        /* Seção Principal (Primeira Dobra) */
+        .hero { 
             display: flex; 
             align-items: center; 
             justify-content: center; 
             min-height: 100vh; 
-            padding: 40px; 
-            gap: 60px; 
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 20px; 
+            gap: 40px; 
+            max-width: 1200px; 
+            margin: 0 auto; 
         }
+
         .content { flex: 1; }
-        h1 { 
-            font-size: 3.5rem; 
-            line-height: 1.1;
-            margin-bottom: 24px; 
-            color: #d4af37; /* Dourado do seu design */
-            font-weight: 800;
-        }
-        p { font-size: 1.25rem; line-height: 1.6; opacity: 0.8; margin-bottom: 40px; }
-        
+        h1 { font-size: 3.5rem; color: #d4af37; margin-bottom: 20px; }
+        p { font-size: 1.2rem; opacity: 0.8; margin-bottom: 30px; }
+
         .cta-button { 
             display: inline-block; 
-            background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%); 
+            background: linear-gradient(90deg, #d4af37, #f9e295); 
             color: #000; 
-            padding: 20px 40px; 
+            padding: 18px 35px; 
             text-decoration: none; 
             font-weight: bold; 
-            font-size: 1.1rem;
-            border-radius: 8px; 
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+            border-radius: 8px;
         }
-        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4); }
 
+        .image-box { flex: 1; text-align: center; }
         .image-box img { 
             max-width: 100%; 
-            border-radius: 20px; 
-            border: 1px solid rgba(255,255,255,0.1);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            height: auto; 
+            border-radius: 15px; 
+            /* Se a imagem quebrar, esse fundo cinza evita o layout vazio */
+            background-color: #1a1a1a; 
+            min-height: 300px;
         }
 
-        @media (max-width: 900px) {
-            .container { flex-direction: column; text-align: center; padding: 60px 20px; }
-            h1 { font-size: 2.5rem; }
-        }
+        /* Seção Extra (Para não ficar só na primeira dobra) */
+        .details { padding: 80px 20px; background: #0a0a0a; text-align: center; }
+
+        @media (max-width: 768px) { .hero { flex-direction: column; text-align: center; } }
     </style>
 </head>
 <body>
 
-    <main class="container">
+    <section class="hero">
         <div class="content">
             <h1>Estratégia & ROI em Brindes</h1>
-            <p>Transformamos brindes em ativos de vendas. Consultoria especializada para empresas que buscam inteligência, economia e resultados mensuráveis.</p>
+            <p>Consultoria especializada em BH. Transformamos brindes em ferramentas de vendas reais.</p>
             
-            <a href="https://wa.me/SEUNUMERO" 
-               class="cta-button" 
-               onclick="gtag('event', 'generate_lead', { 'event_label': 'Botao_Principal_LP' });">
-               SOLICITAR DIAGNÓSTICO ESTRATÉGICO
+            <a href="https://wa.me/SEUNUMERO" class="cta-button" 
+               onclick="gtag('event', 'generate_lead', { 'event_label': 'Botao_Principal' });">
+                SOLICITAR DIAGNÓSTICO ESTRATÉGICO
             </a>
         </div>
 
         <div class="image-box">
             <img src="foto-cia.png" alt="Victor Hugo - Cia do Brinde">
         </div>
-    </main>
+    </section>
+
+    <section class="details">
+        <h2>Por que escolher a Cia. do Brinde?</h2>
+        <p>Mais de 20 anos de experiência no mercado de Belo Horizonte.</p>
+        </section>
 
 </body>
 </html>
