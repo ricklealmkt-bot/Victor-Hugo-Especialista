@@ -1,85 +1,231 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GYT7LGDRTK"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-GYT7LGDRTK');
-    </script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cia. do Brinde - Brinde Estratégico</title>
+    <title>Victor Hugo | Consultoria Brinde Estratégico com ROI</title>
+    <meta name="description" content="Estratégia, inteligência e ROI em brindes corporativos. Consultoria premium com Victor Hugo em Belo Horizonte.">
     
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+
     <style>
-        body { background-color: #000; color: #fff; font-family: sans-serif; margin: 0; }
+        :root {
+            --bg-dark: #000000;
+            --bg-card: #0D0D0D;
+            /* Gradiente Ouro Premium */
+            --gold-grad: linear-gradient(90deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+            --gold-solid: #D4AF37;
+            --text-main: #FFFFFF;
+            --text-secondary: #A0A0A0; /* Cinza sofisticado */
+            --border: #222222;
+            --max-width: 1100px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: var(--text-main); background: var(--bg-dark); scroll-behavior: smooth; }
+
+        .container { width: 90%; max-width: var(--max-width); margin: 0 auto; }
+        .section-padding { padding: 100px 0; }
+        .text-center { text-align: center; }
+
+        /* --- TÍTULOS EM OURO --- */
+        .gold-text {
+            background: var(--gold-grad);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        h1 { font-size: 3.8rem; font-weight: 900; letter-spacing: -1px; }
+        h2 { font-size: 2.8rem; font-weight: 900; margin-bottom: 20px; letter-spacing: -0.5px; }
+        h3 { font-size: 1.5rem; font-weight: 700; color: #fff; }
+
+        /* --- 1ª DOBRA: HERO --- */
+        #hero {
+            background: radial-gradient(circle at center, #111 0%, #000 100%);
+            padding: 80px 0;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text .subheadline { 
+            font-size: 1.3rem; 
+            font-weight: 300; 
+            margin-bottom: 40px; 
+            color: var(--text-secondary);
+            max-width: 550px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Moldura de Autoridade */
+        .hero-image-container {
+            border: 1px solid #333;
+            border-radius: 40px;
+            padding: 10px;
+            background: linear-gradient(145deg, #111, #000);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+        }
+
+        .hero-image-container img {
+            border-radius: 30px;
+            width: 100%;
+            display: block;
+            filter: contrast(1.1);
+        }
+
+        /* --- BOTÃO OURO PREMIUM --- */
+        .btn {
+            display: inline-block;
+            padding: 22px 50px;
+            background: var(--gold-grad);
+            color: #000;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            border-radius: 4px; /* Bordas levemente quadradas para ar mais executivo */
+            box-shadow: 0 15px 35px rgba(191, 149, 63, 0.3);
+            transition: all 0.4s ease;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 20px 45px rgba(191, 149, 63, 0.5); 
+            filter: brightness(1.1);
+        }
+
+        /* --- CARDS E SEÇÕES --- */
+        .contrast-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 50px; }
+        .card { padding: 50px; border-radius: 20px; background: var(--bg-card); border: 1px solid var(--border); }
         
-        /* Seção Principal (Primeira Dobra) */
-        .hero { 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            min-height: 100vh; 
-            padding: 20px; 
-            gap: 40px; 
-            max-width: 1200px; 
-            margin: 0 auto; 
+        .card-red { border-left: 4px solid #441111; }
+        .card-gold { border-left: 4px solid var(--gold-solid); }
+
+        .list-item { display: flex; align-items: center; margin-bottom: 15px; font-size: 1.1rem; color: var(--text-secondary); }
+        .list-item span { color: var(--gold-solid); margin-right: 15px; font-weight: bold; }
+
+        .method-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; margin-top: 60px; }
+        .step { background: var(--bg-card); padding: 40px; border: 1px solid var(--border); transition: 0.3s; }
+        .step:hover { border-color: var(--gold-solid); }
+        .step .num { font-size: 1rem; color: var(--gold-solid); font-weight: 900; margin-bottom: 10px; display: block; border-bottom: 1px solid #333; padding-bottom: 10px; }
+
+        /* --- FAQ --- */
+        .faq-container { max-width: 800px; margin: 60px auto 0; }
+        details { background: var(--bg-card); margin-bottom: 10px; border: 1px solid var(--border); border-radius: 8px; }
+        summary { padding: 25px; font-weight: 700; cursor: pointer; color: #fff; list-style: none; position: relative; }
+        summary::after { content: '→'; position: absolute; right: 25px; color: var(--gold-solid); }
+        details p { padding: 0 25px 25px; color: var(--text-secondary); }
+
+        footer { border-top: 1px solid var(--border); padding: 80px 0; text-align: center; }
+
+        @media (max-width: 992px) {
+            .hero-grid { grid-template-columns: 1fr; text-align: center; }
+            h1 { font-size: 2.8rem; }
+            .hero-text .subheadline { margin: 0 auto 40px; }
+            .contrast-grid { grid-template-columns: 1fr; }
         }
-
-        .content { flex: 1; }
-        h1 { font-size: 3.5rem; color: #d4af37; margin-bottom: 20px; }
-        p { font-size: 1.2rem; opacity: 0.8; margin-bottom: 30px; }
-
-        .cta-button { 
-            display: inline-block; 
-            background: linear-gradient(90deg, #d4af37, #f9e295); 
-            color: #000; 
-            padding: 18px 35px; 
-            text-decoration: none; 
-            font-weight: bold; 
-            border-radius: 8px;
-        }
-
-        .image-box { flex: 1; text-align: center; }
-        .image-box img { 
-            max-width: 100%; 
-            height: auto; 
-            border-radius: 15px; 
-            /* Se a imagem quebrar, esse fundo cinza evita o layout vazio */
-            background-color: #1a1a1a; 
-            min-height: 300px;
-        }
-
-        /* Seção Extra (Para não ficar só na primeira dobra) */
-        .details { padding: 80px 20px; background: #0a0a0a; text-align: center; }
-
-        @media (max-width: 768px) { .hero { flex-direction: column; text-align: center; } }
     </style>
 </head>
 <body>
 
-    <section class="hero">
-        <div class="content">
-            <h1>Estratégia & ROI em Brindes</h1>
-            <p>Consultoria especializada em BH. Transformamos brindes em ferramentas de vendas reais.</p>
-            
-            <a href="https://wa.me/SEUNUMERO" class="cta-button" 
-               onclick="gtag('event', 'generate_lead', { 'event_label': 'Botao_Principal' });">
-                SOLICITAR DIAGNÓSTICO ESTRATÉGICO
-            </a>
-        </div>
-
-        <div class="image-box">
-            <img src="foto-cia.png" alt="Victor Hugo - Cia do Brinde">
+    <section id="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <h1 class="gold-text">Estratégia & ROI em Brindes</h1>
+                <p class="subheadline">Transformamos brindes em ativos de vendas. Consultoria especializada para empresas que buscam inteligência, economia e resultados mensuráveis.</p>
+                <a href="https://wa.me/5531997455656?text=Olá Victor, solicito um diagnóstico estratégico." class="btn">Solicitar Diagnóstico Estratégico</a>
+            </div>
+            <div class="hero-image-container">
+                <img src="ceo-victor.png.png" alt="Victor Hugo - Consultor Estratégico">
+            </div>
         </div>
     </section>
 
-    <section class="details">
-        <h2>Por que escolher a Cia. do Brinde?</h2>
-        <p>Mais de 20 anos de experiência no mercado de Belo Horizonte.</p>
-        </section>
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="text-center">Por que sua empresa <span class="gold-text">perde dinheiro</span> hoje?</h2>
+            <div class="contrast-grid">
+                <div class="card card-red">
+                    <h3 style="color: #FF4D4D; margin-bottom: 20px;">O Cenário Amador</h3>
+                    <div class="list-item"><span>✕</span> Gastos reativos e sem planejamento.</div>
+                    <div class="list-item"><span>✕</span> Escolhas baseadas apenas em "menor preço".</div>
+                    <div class="list-item"><span>✕</span> Itens que terminam no lixo ou na gaveta.</div>
+                    <div class="list-item"><span>✕</span> Impossibilidade de medir o retorno.</div>
+                </div>
+                <div class="card card-gold">
+                    <h3 class="gold-text" style="margin-bottom: 20px;">O Método Estratégico</h3>
+                    <div class="list-item"><span>✓</span> Diagnóstico de gaps e oportunidades.</div>
+                    <div class="list-item"><span>✓</span> Curadoria orientada ao público e KPI.</div>
+                    <div class="list-item"><span>✓</span> Ativos que geram lembrança e desejo.</div>
+                    <div class="list-item"><span>✓</span> Relatórios de ROI para a diretoria.</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</body>
-</html>
+    <section class="section-padding" style="background: #050505;">
+        <div class="container text-center">
+            <h2 class="gold-text">A Ciência por trás do Brinde</h2>
+            <p style="margin-bottom: 50px;">Quatro passos para transformar custo em investimento.</p>
+            <div class="method-steps">
+                <div class="step">
+                    <span class="num">PASSO 01</span>
+                    <h3>Auditoria</h3>
+                    <p>Análise de investimentos anteriores e identificação de desperdícios.</p>
+                </div>
+                <div class="step">
+                    <span class="num">PASSO 02</span>
+                    <h3>Alinhamento</h3>
+                    <p>Definição de objetivos: Fidelização, Lead Gen ou Branding?</p>
+                </div>
+                <div class="step">
+                    <span class="num">PASSO 03</span>
+                    <h3>Planejamento</h3>
+                    <p>Curadoria de itens e cronograma anual inteligente.</p>
+                </div>
+                <div class="step">
+                    <span class="num">PASSO 04</span>
+                    <h3>Métricas</h3>
+                    <p>Análise de resultados e prova de retorno sobre o capital.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="text-center gold-text">FAQ de Performance</h2>
+            <div class="faq-container">
+                <details>
+                    <summary>A consultoria se paga?</summary>
+                    <p>Sim. Através da redução de desperdícios e da escolha de itens com maior taxa de conversão, o valor investido na consultoria costuma ser recuperado já nas primeiras campanhas otimizadas.</p>
+                </details>
+                <details>
+                    <summary>Como o ROI é calculado?</summary>
+                    <p>Trabalhamos com indicadores de performance (KPIs) como custo por lead, taxa de retenção de clientes e métricas de lembrança de marca (Top of Mind).</p>
+                </details>
+            </div>
+            <div class="text-center" style="margin-top: 60px;">
+                <a href="https://wa.me/5531997455656?text=Quero falar sobre ROI e estratégia." class="btn">Agendar Conversa com Especialista</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <h2 class="gold-text">Victor Hugo | Brinde Estratégico</h2>
+            <p style="margin-top: 20px;">Inteligência aplicada ao mercado promocional.</p>
+            <p style="font-size: 0.8rem; opacity: 0.4; margin-top: 40px;">© 2026 Belo Horizonte - MG. Especialista em ROI de Brindes.</p>
+        </div>
+
