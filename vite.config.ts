@@ -1,7 +1,13 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-export default defineConfig({
-  plugins: [react()],
-  publicDir: 'public', // Força o Vite a olhar a pasta certa
+// Forçamos o retorno de um objeto claro para o compilador
+export default defineConfig(() => {
+  return {
+    plugins: [react()],
+    publicDir: 'public',
+    build: {
+      outDir: 'dist',
+    }
+  }
 })
