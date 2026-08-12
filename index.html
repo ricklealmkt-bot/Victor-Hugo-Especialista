@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<img src="/ceo-victor.png" alt="Victor Hugo - Consultor Estratégico" /><head>
+<html lang="pt-BR">
+<head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GYT7LGDRTK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  // Configuração básica e visualização de página
-  gtag('config', 'G-GYT7LGDRTK', {
-    send_page_view: true
-  });
-</script>
+      // Configuração básica e visualização de página
+      gtag('config', 'G-GYT7LGDRTK', {
+        send_page_view: true
+      });
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Victor Hugo | Consultoria Brinde Estratégico com ROI</title>
@@ -101,7 +102,7 @@
             font-weight: 900;
             font-size: 1.1rem;
             text-transform: uppercase;
-            border-radius: 4px; /* Bordas levemente quadradas para ar mais executivo */
+            border-radius: 4px;
             box-shadow: 0 15px 35px rgba(191, 149, 63, 0.3);
             transition: all 0.4s ease;
             letter-spacing: 1px;
@@ -154,10 +155,10 @@
             <div class="hero-text">
                 <h1 class="gold-text">Estratégia & ROI em Brindes</h1>
                 <p class="subheadline">Transformamos brindes em ativos de vendas. Consultoria especializada para empresas que buscam inteligência, economia e resultados mensuráveis.</p>
-                <a href="https://wa.me/5531997455656?text=Olá Victor, solicito um diagnóstico estratégico." class="btn">Solicitar Diagnóstico Estratégico</a>
+                <a href="https://wa.me/5531997455656?text=Olá Victor, solicito um diagnóstico estratégico." class="btn" onclick="gtag('event', 'generate_lead', { 'event_label': 'Hero_Principal' });">Solicitar Diagnóstico Estratégico</a>
             </div>
             <div class="hero-image-container">
-                <img src="ceo-victor.png.png" alt="Victor Hugo - Consultor Estratégico">
+                <img src="/ceo-victor.png" alt="Victor Hugo - Consultor Estratégico">
             </div>
         </div>
     </section>
@@ -222,16 +223,16 @@
                     <p>Sim. Através da redução de desperdícios e da escolha de itens com maior taxa de conversão, o valor investido na consultoria costuma ser recuperado já nas primeiras campanhas otimizadas.</p>
                 </details>
                 <details>
-                    <summary>Como o ROI é calculado?</summary>
+                    <summary>Como o ROI é calculated?</summary>
                     <p>Trabalhamos com indicadores de performance (KPIs) como custo por lead, taxa de retenção de clientes e métricas de lembrança de marca (Top of Mind).</p>
                 </details>
             </div>
             <div class="text-center" style="margin-top: 60px;">
-                <a href="https://wa.me/5531997455656?text=Olá Victor..." 
-   class="btn" 
-   onclick="gtag('event', 'generate_lead', { 'event_label': 'Hero_Principal' });">
-   Solicitar Diagnóstico Estratégico
-</a>
+                <a href="https://wa.me/5531997455656?text=Olá Victor, solicito um diagnóstico estratégico." 
+                   class="btn" 
+                   onclick="gtag('event', 'generate_lead', { 'event_label': 'FAQ_Bottom' });">
+                    Solicitar Diagnóstico Estratégico
+                </a>
             </div>
         </div>
     </section>
@@ -242,4 +243,6 @@
             <p style="margin-top: 20px;">Inteligência aplicada ao mercado promocional.</p>
             <p style="font-size: 0.8rem; opacity: 0.4; margin-top: 40px;">© 2026 Belo Horizonte - MG. Especialista em ROI de Brindes.</p>
         </div>
-
+    </footer>
+</body>
+</html>
